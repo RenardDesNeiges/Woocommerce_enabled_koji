@@ -60,36 +60,11 @@
 
 			<div class="grid-sizer"></div>
 
-			<?php if ( is_archive() || is_search() ) : ?>
-
-				<div class="preview archive-header archive-header-desktop">
-
-					<div class="preview-wrapper bg-color-black color-gray">
-
-						<div class="preview-inner">
-
-							<?php echo $archive_header_contents; ?>
-
-						</div><!-- .preview-inner -->
-
-					</div><!-- .preview -->
-
-				</div><!-- .archive-header -->
-
-				<?php
-			endif;
+			<?php
 			
 			//Replacing the post loop with a woocommerce loop
 			woocommerce_content();
-			// if ( have_posts() ) :
-
-			// 	while ( have_posts() ) : the_post();
-
-			// 		get_template_part( 'preview', get_post_type() );
-
-			// 	endwhile;
-
-			// endif;
+			
 
 			?>
 
