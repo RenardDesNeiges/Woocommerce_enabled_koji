@@ -26,13 +26,19 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 <div class="grid-sizer"></div>
 
+<a href=" <?php the_permalink(); ?> ">
+
 <article class="preview preview-post do-spot post-1 post type-post status-publish format-standard hentry category-uncategorized missing-thumbnail will-be-spotted spotted" style="position: absolute; left: 0%; top: 0px;">
 
 <div class="preview-wrapper">
 
-<?php do_action('woocommerce_get_product_thumbnail'); ?>
-
 <img src="<?php the_post_thumbnail_url(); ?>" class="attachment-koji_preview_image_high_resolution size-koji_preview_image_high_resolution wp-post-image">
+
+<div class="preview-inner">
+
+<h2 class="preview-title">
+	<?php the_title(); ?>
+</h2>
 
 <!-- <li <?php //wc_product_class( '', $product ); ?>> -->
 
@@ -84,5 +90,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	?>
 
 <!-- </li> -->
+
+</div>
 </div>
 </article>
+</a>
