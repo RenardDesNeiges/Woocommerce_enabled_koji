@@ -13,7 +13,7 @@
 				// Store the output, since we're outputting the archive header twice (desktop version and mobile version)
 				ob_start(); ?>
 
-				<h6 class="subheading"><?php echo koji_get_archive_title_prefix(); ?></h6>
+				<!-- <h6 class="subheading"><?php echo koji_get_archive_title_prefix(); ?></h6> -->
 
 				<div class="archive-header-inner">
 				
