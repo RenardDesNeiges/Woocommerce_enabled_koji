@@ -24,11 +24,11 @@
 
 				<?php endif; ?>
 
-				<p class="credits">
+				<!-- <p class="credits"> -->
 					<?php
 					/* Translators: $s = name of the theme developer */
-					printf( _x( 'Theme by %s', 'Translators: $s = name of the theme developer', 'koji' ), '<a href="https://www.andersnoren.se">' . __( 'Anders Norén', 'koji' ) . '</a>' ); ?>
-				</p><!-- .credits -->
+					//printf( _x( 'Theme by %s', 'Translators: $s = name of the theme developer', 'koji' ), '<a href="https://www.andersnoren.se">' . __( 'Anders Norén', 'koji' ) . '</a>' ); ?>
+				<!-- </p>.credits -->
 
 			</footer><!-- #site-footer -->
 			

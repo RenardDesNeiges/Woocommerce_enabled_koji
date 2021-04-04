@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="site-content" role="main">
+<main id="site-content" role="main" >
 
 	<?php
 

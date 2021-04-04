@@ -1555,8 +1555,15 @@ ul.site-nav ul {
 }
 
 .post-inner {
-	max-width: 56rem;
+	max-width: 90rem;
 	padding: 0 0 6rem;
+}
+
+@media ( max-width: 1465px ) {
+	.post-inner {
+		max-width: 56rem;
+		padding: 0 0 6rem;
+	}
 }
 
 .has-post-thumbnail .post-inner {

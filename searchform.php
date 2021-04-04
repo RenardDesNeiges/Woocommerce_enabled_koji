@@ -5,6 +5,6 @@
 		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'Label', 'koji' ); ?></span>
 		<img aria-hidden="true" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/icons/spyglass.svg" />
 	</label>
-	<input type="search" id="<?php echo $unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Enter your search query', 'Placeholder', 'koji' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+	<input type="search" id="<?php echo $unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Recherche ...', 'Placeholder', 'koji' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	<button type="submit" class="search-submit screen-reader-text"><?php echo _x( 'Search', 'Submit button', 'koji' ); ?></button>
 </form>
