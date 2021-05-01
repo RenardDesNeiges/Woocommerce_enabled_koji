@@ -885,8 +885,31 @@ function mytheme_add_woocommerce_support() {
 
 // remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10); 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);  // remove the tabs display that holds the review, we don't want reviews and it doesn't make sense to have several tabs if we just have a description)
 
+
+// Disable WooCommerce's Default Stylesheets
+function disable_woocommerce_default_css( $styles ) {
+
+	// Disable the stylesheets below via unset():
+	unset( $styles['woocommerce-general'] );  // Styling of buttons, dropdowns, etc.
+	// unset( $styles['woocommerce-layout'] );        // Layout for columns, positioning.
+	// unset( $styles['woocommerce-smallscreen'] );   // Responsive design for mobile devices.
+  
+	return $styles;
+  }
+  add_action('woocommerce_enqueue_styles', 'disable_woocommerce_default_css');
+  
+  
+  // Add a custom stylesheet to replace woocommerce.css
+  function use_woocommerce_custom_css() {
+	// Custom CSS file located in [Theme]/woocommerce/woocommerce.css
+	wp_enqueue_style(
+		'woocommerce-custom', 
+		get_template_directory_uri() . '/woocommerce/woocommerce.css'
+	);
+  }
+  add_action('wp_enqueue_scripts', 'use_woocommerce_custom_css', 15);
 
 // add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 // add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
