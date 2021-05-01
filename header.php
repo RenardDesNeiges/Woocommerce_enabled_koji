@@ -137,6 +137,9 @@ $html_class = is_admin_bar_showing() ? ' showing-admin-bar' : ''; ?>
 
 								?>
 
+								<li class="search-toggle-wrapper" ><a href="http://unipoly.ch"><img style="width : 70%; height : 70%;" src="<?php echo  get_template_directory_uri() . '/assets/images/unipoly.png' ?>"></img></a></li>
+
+
 							</ul><!-- .social-menu -->
 
 						<?php endif; ?>

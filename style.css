@@ -881,6 +881,7 @@ ul.social-icons li {
 }
 
 .s-icons a[href*="500px.com"]::before { content: '\f26e'; font-family: 'Font Awesome 5 Brands'; }
+.s-icons a[href*="unipoly.ch"]::before { content: ''; font-family: 'Serif';}
 .s-icons a[href*="amazon.com"]::before { content: '\f270'; font-family: 'Font Awesome 5 Brands'; }
 .s-icons a[href*="angel.co"]::before { content: '\f209'; font-family: 'Font Awesome 5 Brands'; }
 .s-icons a[href*="audible.com"]::before { content: '\f373'; font-family: 'Font Awesome 5 Brands'; }
