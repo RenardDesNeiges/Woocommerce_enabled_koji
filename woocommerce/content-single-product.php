@@ -30,6 +30,9 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+
+$short_description = get_the_content();
+
 ?>
 
 <main id="site-content" style="height:auto" role="main">
@@ -63,8 +66,9 @@ if ( post_password_required() ) {
 					 */
 					do_action( 'woocommerce_single_product_summary' );
 					?>
+					<div> <?php echo $short_description ?>  </div>
 				</div>
-
+				<div class="woocommerce-tabs wc-tabs-wrapper"></div>
 				<?php
 				/**
 				 * Hook: woocommerce_after_single_product_summary.
