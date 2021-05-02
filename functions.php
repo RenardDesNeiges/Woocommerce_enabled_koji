@@ -911,6 +911,22 @@ function disable_woocommerce_default_css( $styles ) {
   }
   add_action('wp_enqueue_scripts', 'use_woocommerce_custom_css', 15);
 
+  // default amount of products is one
+  add_filter( 'wcfm_product_fields_stock', function( $stock_fields, $product_id, $product_type ) {
+	if( !$product_id ) {
+		if( isset( $stock_fields['manage_stock'] ) ) {
+			$stock_fields['manage_stock']['dfvalue'] = 'enable';
+		}
+		if( isset( $stock_fields['stock_qty'] ) ) {
+			$stock_fields['stock_qty']['value'] = 1;
+		}
+		if( isset( $stock_fields['sold_individually'] ) ) {
+			$stock_fields['sold_individually']['dfvalue'] = 'enable';
+		}
+	}
+  return $stock_fields;
+}, 50, 3 );
+
 // add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 // add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
