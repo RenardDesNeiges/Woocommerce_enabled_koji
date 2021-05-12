@@ -927,13 +927,20 @@ function disable_woocommerce_default_css( $styles ) {
   return $stock_fields;
 }, 50, 3 );
 
-// add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
-// add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
-// function my_theme_wrapper_start() {
-//     echo '<section id="main"> eouech jecrit des trucs';
-// }
+// removes the quantity field from the cart page 
 
-// function my_theme_wrapper_end() {
-//     echo '</section>';
-// }
+function wc_remove_quantity_field_from_cart( $return, $product ) {
+	if ( is_cart() ) return true;
+}
+add_filter( 'woocommerce_is_sold_individually', 'wc_remove_quantity_field_from_cart', 10, 2 );
+
+
+/* REMOVE ADD TO CART BUTTON FOR NON CLIENT USERS */
+add_action('wp_loaded','get_user_role');
+function get_user_role(){
+$current_user = wp_get_current_user();
+if(count($current_user->roles)!==0){
+if($current_user->roles[0]!='client'){
+add_filter('woocommerce_is_purchasable', '__return_false');
+}}}
